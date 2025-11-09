@@ -7,6 +7,7 @@ import boatsRoutes from "./routes/boats.js"
 import bookingsRoutes from "./routes/bookings.js"
 import availabilityRoutes from "./routes/availability.js"
 import paymentsRoutes from "./routes/payments.js"
+import companyRoutes from "./routes/company.js"
 
 // Load environment variables
 dotenv.config()
@@ -30,6 +31,7 @@ app.use("/api/boats", boatsRoutes)
 app.use("/api/bookings", bookingsRoutes)
 app.use("/api/availability", availabilityRoutes)
 app.use("/api/payments", paymentsRoutes)
+app.use("/api/company", companyRoutes)
 
 // Error handling middleware
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {

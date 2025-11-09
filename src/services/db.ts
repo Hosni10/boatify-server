@@ -36,6 +36,7 @@ export const COLLECTIONS = {
   BOOKINGS: "bookings",
   PAYMENTS: "payments",
   REVIEWS: "reviews",
+  COMPANY_PROFILES: "company_profiles",
 }
 
 // Create indexes for better query performance
@@ -58,6 +59,9 @@ export async function createIndexes(db: Db) {
   // Payments collection indexes
   await db.collection(COLLECTIONS.PAYMENTS).createIndex({ bookingId: 1 })
   await db.collection(COLLECTIONS.PAYMENTS).createIndex({ status: 1 })
+
+  // Company profiles collection indexes
+  await db.collection(COLLECTIONS.COMPANY_PROFILES).createIndex({ companyId: 1 }, { unique: true })
 }
 
 
