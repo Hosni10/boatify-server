@@ -105,7 +105,7 @@ router.delete("/:id", async (req, res) => {
     const { id } = req.params
     const { db } = await connectToDatabase()
     const boatsCollection = db.collection(COLLECTIONS.BOATS)
-
+    
     const result = await boatsCollection.deleteOne({ _id: new ObjectId(id) })
 
     if (result.deletedCount === 0) {

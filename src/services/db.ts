@@ -21,7 +21,7 @@ export async function connectToDatabase() {
 
   await client.connect()
 
-  const db = client.db(process.env.MONGODB_DB_NAME || "boatflow")
+  const db = client.db(process.env.MONGODB_DB_NAME || "boatify")
 
   cachedClient = client
   cachedDb = db
